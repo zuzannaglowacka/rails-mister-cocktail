@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 
+# Gemfile
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass' # Bootstrap v3
+gem 'font-awesome-sass'
+gem 'simple_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
 # Use sqlite3 as the database for Active Record
