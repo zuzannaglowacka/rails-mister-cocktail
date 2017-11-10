@@ -1,21 +1,38 @@
-<h1>Our cocktails details... </h1>
+<div class="container"
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-  <%= @cocktail.name %>
+      <h1><%= @cocktail.name %></h1>
 
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.description %>
+            of
+            <%= dose.ingredient.name %>
+          </li>
+        <% end %>
+      </ul>
 
-  <h2>Ingredients</h2>
-    <ul class="list-unstyled">
-      <% @cocktail.doses.each do |dose| %>
-        <li>
-          <%= dose.description %> - <%= dose.ingredient %>
-          <%= link_to dose_path(dose), method: :delete, class: "btn btn-danger btn-xs" do %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          <% end %>
-        </li>
+      <h3>Add an ingredient</h3>
+      <%=simple_form_for([ @cocktail, @dose ]) do |f| %>
+        <%= f.input :description %>
+        <%= f.input :ingredient_id,
+          collection: Ingredient.order(:name),
+          prompt: "Please choose..."
+        %>
+
+        <%# Example of custom error message display %>
+        <%# if @dose.errors.any? %>
+          <%# @dose.errors.full_messages.each do |message| %>
+            <!-- <p><%#= message %></p> -->
+          <%# end %>
+        <%# end %>
+
+        <%= f.submit 'Add ingredient', class: "btn btn-primary" %>
       <% end %>
-    </ul>
-
-    <%= link_to "+", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
-
-    <%= link_to "Back to all", cocktails_path %>
+        <%= link_to "Back to all", cocktails_path %>
+      </div>
+    </div>
+  </div>
 

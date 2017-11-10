@@ -10,3 +10,8 @@ Ingredient.destroy_all
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "tomato juice")
+Ingredient.create(name: "vodka")
+Ingredient.create(name: "Martini")
+Ingredient.create(name: "green olives")
+
