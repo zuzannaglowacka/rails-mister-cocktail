@@ -1,0 +1,32 @@
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  font-size: 58px;
+
+}
+
+.btn-primary {
+  background-color: #B0228C;
+  border-color: #B0228C;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: #f3dc58;
+  color: black;
+  border-color: #f3dc58;
+}
+
+body {
+  background-image: url('drink background.jpeg');
+  /* cover makes sure the image covers the whole element */
+  background-size: cover;
+  /* fixed fixes the image so it doesn't scroll with the content */
+  background-attachment: fixed;
+  /* the image is zoomed thanks to cover, so center zooms in the center */
+  background-position: center;
+
+
+
+}
