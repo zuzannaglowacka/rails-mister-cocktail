@@ -2,9 +2,13 @@
 
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
-  <%= f.input :photo %>
-  <%= v.input :photo_cache, as: :hidden %>
-  <%= v.submit "Submit", class: "btn btn-default" %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.submit "Submit", class: "btn btn-default" %>
   <%= f.submit 'Add a cocktail', class: 'btn btn-primary' %>
 <% end %>
+
+<div class="new-cocktail-bonus">
+  <%= link_to '< Go back', cocktails_path, class: 'go-back-btn' %>
+</div>
+
 
